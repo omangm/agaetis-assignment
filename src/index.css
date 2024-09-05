@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset default scrollbar styles for all elements */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d2d2d2;
+  transition: scrollbar-width 0.5s ease-out;
+}
+
+/* Track for all elements */
+*::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+/* Handle for all elements */
+*::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 50%;
+}
+
+/* Handle on hover for all elements */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Hide scrollbar when not in use for all elements */
+*::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  display: none;
+}
+
+/* Show scrollbar when hover for all elements */
+*:hover::-webkit-scrollbar {
+  width: thin;
+  display: block;
+}
+
+/* Hide scrollbar but allow scrolling */
+.tag-scrollbar {
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  /* Hide scrollbar in WebKit-based browsers (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+}
+
+.dotTyping {
+  position: relative;
+  left: -9999px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #186daa;
+  color: #186daa;
+  box-shadow: 9984px 0 0 0 #186daa, 9999px 0 0 0 #186daa, 10014px 0 0 0 #186daa;
+  animation: dot-typing 1.5s infinite linear;
+}
+
+@keyframes dot-typing {
+  0% {
+    box-shadow: 9984px 0 0 0 #186daa, 9999px 0 0 0 #186daa,
+      10014px 0 0 0 #186daa;
+  }
+
+  16.667% {
+    box-shadow: 9984px -10px 0 0 #186daa, 9999px 0 0 0 #186daa,
+      10014px 0 0 0 #186daa;
+  }
+
+  33.333% {
+    box-shadow: 9984px 0 0 0 #186daa, 9999px 0 0 0 #186daa,
+      10014px 0 0 0 #186daa;
+  }
+
+  50% {
+    box-shadow: 9984px 0 0 0 #186daa, 9999px -10px 0 0 #186daa,
+      10014px 0 0 0 #186daa;
+  }
+
+  66.667% {
+    box-shadow: 9984px 0 0 0 #186daa, 9999px 0 0 0 #186daa,
+      10014px 0 0 0 #186daa;
+  }
+
+  83.333% {
+    box-shadow: 9984px 0 0 0 #186daa, 9999px 0 0 0 #186daa,
+      10014px -10px 0 0 #186daa;
+  }
+
+  100% {
+    box-shadow: 9984px 0 0 0 #186daa, 9999px 0 0 0 #186daa,
+      10014px 0 0 0 #186daa;
+  }
+}
