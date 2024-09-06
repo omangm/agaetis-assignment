@@ -49,15 +49,18 @@ const Navbar = () => {
       </div>
 
       <nav className="w-full text-gray-600 max-w-screen-xl py-4 shadow-inner ">
-        <ul className="flex w-full overflow-x-auto items-center tag-scrollbar justify-between gap-4 md:gap-0 px-4 lg:px-0">
-          {tags.map((tag, i) => (
-            <li className="mx-4 text-nowrap capitalize" key={i}>
-              <Link to={PAGE_ROUTES.TAG.replace(":tag", tag)} href="">{tag}</Link>
-            </li>
-          ))}
-        </ul>
+        <marquee behavior="" direction="">
+          <ul className="flex w-full overflow-x-auto items-center tag-scrollbar justify-between gap-4 md:gap-0 px-4 lg:px-0">
+            {tags.map((tag, i) => (
+              <li className="mx-4 text-nowrap capitalize" key={i}>
+                <Link to={PAGE_ROUTES.TAG.replace(":tag", tag)} href="">{tag}</Link>
+              </li>
+            ))}
+          </ul>
+        </marquee>
       </nav>
-    </header>
+
+    </header >
   );
 };
 
