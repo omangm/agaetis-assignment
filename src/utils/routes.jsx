@@ -5,6 +5,7 @@ import Blog from "../pages/blog";
 import { PAGE_ROUTES } from "./constants";
 import Tag from "../pages/tag";
 import User from "../pages/user";
+import Archive from "../pages/archives";
 
 export const routes = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const routes = createBrowserRouter([
       {
         element: <User />,
         path: PAGE_ROUTES.USER
+      },
+      {
+        element: <Archive />,
+        path: PAGE_ROUTES.ARCHIVE
       },
     ]
   },

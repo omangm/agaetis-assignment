@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { databases } from "../../utils/appwrite"
 import BlogCard from '../../components/BlogCard';
 import { useBlogContext } from '../../context/contextHooks';
 

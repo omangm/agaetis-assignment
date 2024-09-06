@@ -3,16 +3,17 @@ import { useBlogContext } from "../../../context/contextHooks";
 import { useEffect } from "react";
 import { monthYearFormatter } from "../../../utils/date";
 import { Link } from "react-router-dom";
+import { PAGE_ROUTES } from "../../../utils/constants";
 
-const Archive = () => {
+const ArchiveCard = () => {
     const [archives, setArchives] = useState([]);
     const { blogs } = useBlogContext();
 
     useEffect(() => {
-        const result = [...new Set(blogs.map(blog => monthYearFormatter(blog.publishedDate)))];
+        const result = [...new Set(blogs.map(blog => blog.publishedDate))];
 
         setArchives(result);
-    }, [])
+    }, [blogs])
 
     return (
         <div className="shadow-md p-4 bg-slate-50">
@@ -20,7 +21,7 @@ const Archive = () => {
             {
                 archives.map(arc => (
                     <div className="py-1" key={arc}>
-                        <Link className="text-blue-700 hover:underline transition-all hover:text-blue-800">{arc}</Link>
+                        <Link to={PAGE_ROUTES.ARCHIVE.replace(":date", arc)} className="text-blue-700 hover:underline transition-all hover:text-blue-800">{monthYearFormatter(arc)}</Link>
                     </div>
                 ))
             }
@@ -28,4 +29,4 @@ const Archive = () => {
     )
 };
 
-export default Archive
+export default ArchiveCard;

@@ -5,7 +5,7 @@ import BlogPost from "../../components/BlogPost";
 import { useState } from "react";
 import { useEffect } from "react";
 import About from "./components/About";
-import Archive from "./components/Archive";
+import ArchiveCard from "./components/ArchiveCard";
 import Socials from "./components/Socials";
 
 const Blog = () => {
@@ -57,7 +57,7 @@ const Blog = () => {
             </div>
             <div className="basis-1/4 flex flex-col gap-10 mt-10 md:mt-0">
               <About />
-              <Archive />
+              <ArchiveCard />
               <Socials />
             </div>
           </div>
